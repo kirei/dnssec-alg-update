@@ -1,6 +1,9 @@
 DRAFT=		dnssec-alg-update
 
+# https://github.com/miekg/mmark
 MMARK=		mmark
+
+# https://pypi.python.org/pypi/xml2rfc
 XML2RFC=	xml2rfc
 
 MD=		$(DRAFT).md
