@@ -1,4 +1,4 @@
-DRAFT=		dnssec-algorithm-update
+DRAFT=		dnssec-alg-update
 
 MMARK=		mmark
 XML2RFC=	xml2rfc
