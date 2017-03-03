@@ -1,8 +1,8 @@
 %%%
 
-    Title = "DNSSEC  Delegation Requirements"
-    abbrev = "DNS Delegation Requirements"
-    category = "bcp"
+    Title = "DNS Security (DNSSEC) DNSKEY Algorithm IANA Registry Updates"
+    abbrev = "DNSSEC Algorithm Updates"
+    category = "Standards Track"
     docName = "draft-arends-dnsop-dnssec-algorithm-update-00"
     ipr= "trust200902"
     area = "Internet"
@@ -26,6 +26,13 @@
         [author.address]
         email="jakob@kirei.se"
 
+    [[author]]
+    initials="M."
+    surname="Larson"
+    fullname="Matt Larson"
+    organization="ICANN"
+        [author.address]
+        email="matt.larson@icann.org"
 %%%
 
 .# Abstract
