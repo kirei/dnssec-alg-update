@@ -106,7 +106,7 @@ This document lists the implementation status of cryptographic algorithms used w
 
 This document lists, and in some cases assigns, the implementation status of cryptographic algorithms used with DNSSEC. It is not meant to be a discussion on algorithm superiority.
 
-Since the satus of two algorithms have changed, it is important to consider the long term effect of these changes in implementations.
+Since the status of two algorithms have changed, it is important to consider the long term effect of these changes in implementations.
 
 An implementation may have provided a default algorithm to use when generating a DNSKEY. An implementation may select a default algorithm to sign DNSSEC records. It is recommended that implementations that provide a default algorithm use an algorithm with the status "Must Implement".
 
