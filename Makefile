@@ -1,7 +1,7 @@
 DRAFT=		dnssec-alg-update
 
 # https://github.com/miekg/mmark
-MMARK=		/Users/roy.arends/go/src/github.com/miekg/mmark/mmark/mmark
+MMARK=		mmark
 
 # https://pypi.python.org/pypi/xml2rfc
 XML2RFC=	xml2rfc
