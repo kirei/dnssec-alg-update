@@ -46,7 +46,7 @@ The DNS Security Extensions (DNSSEC) require the use of cryptographic algorithm 
 
 The Domain Name System (DNS) Security Extensions (DNSSEC, defined by [@?RFC4033], [@?RFC4034], [@?RFC4035], [@?RFC4509], [@?RFC5155], and [@?RFC5702]) use digital signatures over DNS data to provide source authentication and integrity protection. DNSSEC uses IANA registries to list codes for digital signature algorithms and hash functions.
 
-This document updates a set of entries in the IANA registries titled "DNS Security (DNSSEC) Algorithm Numbers" and "Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms". This document updates the following: 
+This document updates a set of entries in the IANA registries titled "DNS Security (DNSSEC) Algorithm Numbers" and "Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms".
 
 ##  Reserved Words
 
@@ -70,7 +70,7 @@ Optional: The algorithm MAY be implemented, but all implementations MUST be prep
 
 RSASHA1 had an implementation status of "Must Implement", consistent with [@RFC4034]. The status of RSASHA1 is set to "Recommended to Implement" consistent with RSASHA1-NSEC3-SHA1. The shift from "Must Implement" to "Recommended to Implement" is due to a perceived weakness in SHA1.
 
-The status of RSASHA256 is set to "Must Implement" as major deployments (such as the root zone) use these algorithms [@RZDPS]. It is believed that RSA/SHA-256 or RSA/SHA-512 algorithms will replace older algorithms (e.g., RSA/SHA-1) that have a perceived weakness.
+The status of RSASHA256 is set to "Must Implement" as major deployments, such as the root zone [@RZDPS], use these algorithms. It is believed that RSA/SHA-256 or RSA/SHA-512 algorithms will replace older algorithms (e.g., RSA/SHA-1) that have a perceived weakness.
 
 All other algorithms used in DNSSEC specified without an implementation status are currently set to "Optional".
 
