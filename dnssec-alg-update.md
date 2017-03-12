@@ -37,8 +37,7 @@
 
 .# Abstract
 
-The DNS Security Extensions (DNSSEC) require the use of cryptographic algorithm suites for generating digital signatures and cryptographic hashes over DNS data. The algorithms specified for use with DNSSEC are reflected in IANA-maintained registries.  This document updates some entries in these registries. The main reason for these updates is to retire the use of SHA1. 
-...
+The DNS Security Extensions (DNSSEC) require the use of cryptographic algorithm suites for generating digital signatures and cryptographic hashes over DNS data. The algorithms specified for use with DNSSEC are reflected in IANA-maintained registries. This document updates some entries in these registries. The main reason for these updates is to retire the use of SHA1.
 
 {mainmatter}
 
@@ -53,102 +52,64 @@ This document updates a set of entries in the IANA registries titled "DNS Securi
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [@?RFC2119].
 
+
 # The DNS Security Algorithm Implementation Status Lists
 
 ## Status Definitions
 
-Must Implement:  The algorithm MUST be implemented to interoperate
-      with other implementations of this specification.
+Must Implement: The algorithm MUST be implemented to interoperate with other implementations of this specification.
 
-   Must Not Implement:  The algorithm MUST NOT be implemented.  An
-      algorithm with this status has known weaknesses.
+Must Not Implement:  The algorithm MUST NOT be implemented. An algorithm with this status has known weaknesses.
 
-   Recommended to Implement:  The algorithm SHOULD be implemented.
-      Utility and interoperability with other implementations will be
-      improved when an algorithm with this status is implemented, though
-      there might be occasions where it is reasonable not to implement
-      the algorithm.  An implementer must understand and weigh the full
-      implications of choosing not to implement this particular
-      algorithm.
+Recommended to Implement:  The algorithm SHOULD be implemented. Utility and interoperability with other implementations will be improved when an algorithm with this status is implemented, though there might be occasions where it is reasonable not to implement the algorithm. An implementer must understand and weigh the full implications of choosing not to implement this particular algorithm.
 
-Optional:  The algorithm MAY be implemented, but all implementations
-      MUST be prepared to interoperate with implementations that do or
-      do not implement this algorithm.
+Optional: The algorithm MAY be implemented, but all implementations MUST be prepared to interoperate with implementations that do or do not implement this algorithm.
+
 
 ## Algorithm Implementation Status Assignment Rationale
-   RSASHA1 had an implementation status of Must Implement, consistent
-   with [RFC4034].  The status of RSASHA1 is set to Recommended to Implement
-   consistent with RSASHA1-NSEC3-SHA1. The shift from Must Implement to Recommended to Implement 
-   is due to a perceived weakness in SHA1.
 
-   The status of RSASHA256 is set to Must Implement as major deployments
-   (such as the root zone) use these algorithms [ROOTDPS].  It is
-   believed that RSA/SHA-256 or RSA/SHA-512 algorithms will replace
-   older algorithms (e.g., RSA/SHA-1) that have a perceived weakness.
+RSASHA1 had an implementation status of Must Implement, consistent with [RFC4034].  The status of RSASHA1 is set to Recommended to Implement consistent with RSASHA1-NSEC3-SHA1. The shift from Must Implement to Recommended to Implement is due to a perceived weakness in SHA1.
 
-   All other algorithms used in DNSSEC specified without an
-   implementation status are currently set to Optional.
+The status of RSASHA256 is set to Must Implement as major deployments (such as the root zone) use these algorithms [ROOTDPS]. It is believed that RSA/SHA-256 or RSA/SHA-512 algorithms will replace older algorithms (e.g., RSA/SHA-1) that have a perceived weakness.
+
+All other algorithms used in DNSSEC specified without an implementation status are currently set to Optional.
 
 ## DNSSEC Implementation Status Table
-  The DNSSEC algorithm implementation status table is listed below.
-   Only the algorithms already specified for use with DNSSEC at the time
-   of writing are listed.
 
-    |-----------|-----------|-----------------|----------------|
-    | Must      | Must Not  | Recommended     | Optional       |
-    | Implement | Implement | to Implement    |                |
-    |-----------|-----------|-----------------|----------------|
-    | RSASHA256 |   RSAMD5  | RSASHA1         | Any registered |
-    |           |           | RSASHA1-NSEC3   | algorithm not  |
-    |           |           |    -SHA1        | listed in this |
-    |           |           | RSASHA512       | table          |
-    |           |           | ECDSAP256SHA256 |                |
-    |           |           | ECDSAP384SHA384 |                |
-    |-----------|-----------|-----------------|----------------|
+The DNSSEC algorithm implementation status table is listed below. Only the algorithms already specified for use with DNSSEC at the time of writing are listed.
 
-This table does not list the Reserved values in the IANA registry
-   table or the values for INDIRECT (252), PRIVATE (253), and PRIVATEOID
-   (254).  These values may relate to more than one algorithm and are
-   therefore up to the implementer's discretion.  As noted, any
-   algorithm not listed in the table is Optional. 
+| Must Implement | Must Not Implement | Recommended        | Optional
+|:---------------|:-------------------|:-------------------|:--------
+| RSASHA256      | RSAMD5             | RSASHA1            | Any registered algorithm not listed in this table
+|                |                    | RSASHA1-NSEC3-SHA1 |
+|                |                    | RSASHA512          |
+|                |                    | ECDSAP256SHA256    |
+|                |                    | ECDSAP384SHA384    |
+
+This table does not list the Reserved values in the IANA registry table or the values for INDIRECT (252), PRIVATE (253), and PRIVATEOID (254).  These values may relate to more than one algorithm and are therefore up to the implementer's discretion. As noted, any algorithm not listed in the table is Optional. 
 
 ## Specifying New Algorithms and Updating the Status of Existing Entries
 
-   [@?RFC6014] establishes a parallel procedure for adding a registry
-   entry for a new algorithm other than a standards track document.
-   Because any algorithm not listed in the foregoing table is Optional,
-   algorithms entered into the registry using the [@?RFC6014] procedure
-   are automatically Optional.
+[@?RFC6014] establishes a parallel procedure for adding a registry
+entry for a new algorithm other than a standards track document.
+Because any algorithm not listed in the foregoing table is Optional,
+algorithms entered into the registry using the [@?RFC6014] procedure
+are automatically Optional.
 
-   It has turned out to be useful for implementations to refer to a
-   single document that specifies the implementation status of every
-   algorithm.  Accordingly, when a new algorithm is to be registered
-   with a status other than Optional, this document shall be made
-   obsolete by a new document that adds the new algorithm to the table
-   in Section 2.3.  Similarly, if the status of any algorithm in the
-   table in Section 2.3 changes, a new document shall make this document
-   obsolete; that document shall include a replacement of the table in
-   Section 2.3.  This way, the goal of having one authoritative document
-   to specify all the status values is achieved.
+It has turned out to be useful for implementations to refer to a single document that specifies the implementation status of every algorithm. Accordingly, when a new algorithm is to be registered with a status other than Optional, this document shall be made obsolete by a new document that adds the new algorithm to the table in Section 2.3. Similarly, if the status of any algorithm in the table in Section 2.3 changes, a new document shall make this document obsolete; that document shall include a replacement of the table in Section 2.3. This way, the goal of having one authoritative document to specify all the status values is achieved.
 
-   This document cannot be updated, only made obsolete and replaced by a
-   successor document.
+This document cannot be updated, only made obsolete and replaced by a successor document.
+
 
 # IANA Considerations
 
-   This document lists the implementation status of cryptographic
-   algorithms used with DNSSEC.  These algorithms are maintained in an
-   IANA registry at http://www.iana.org/assignments/dns-sec-alg-numbers.
-   Because this document establishes the implementation status of every
-   algorithm, it has been listed as a reference for the registry itself.
+This document lists the implementation status of cryptographic algorithms used with DNSSEC. These algorithms are maintained in an IANA registry at http://www.iana.org/assignments/dns-sec-alg-numbers. Because this document establishes the implementation status of every algorithm, it has been listed as a reference for the registry itself.
+
 
 # Security Considerations
 
-   This document lists, and in some cases assigns, the implementation
-   status of cryptographic algorithms used with DNSSEC.  It is not meant
-   to be a discussion on algorithm superiority.  
+This document lists, and in some cases assigns, the implementation status of cryptographic algorithms used with DNSSEC. It is not meant to be a discussion on algorithm superiority.
 
-   Since the satus of two algorithms have changed, it is important to consider the long term effect of these changes in 
-   implementations. 
+Since the satus of two algorithms have changed, it is important to consider the long term effect of these changes in implementations.
 
-   An implementation may have provided a default algorithm to use when generating a DNSKEY. An implementation may select a default algorithm to sign DNSSEC records. It is recommended that implementations that provide a default algorithm use an algorithm with the status "Must Implement".  
+An implementation may have provided a default algorithm to use when generating a DNSKEY. An implementation may select a default algorithm to sign DNSSEC records. It is recommended that implementations that provide a default algorithm use an algorithm with the status "Must Implement".
