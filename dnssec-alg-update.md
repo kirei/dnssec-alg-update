@@ -70,7 +70,7 @@ Optional: The algorithm MAY be implemented, but all implementations MUST be prep
 
 RSASHA1 had an implementation status of Must Implement, consistent with [@RFC4034]. The status of RSASHA1 is set to Recommended to Implement consistent with RSASHA1-NSEC3-SHA1. The shift from Must Implement to Recommended to Implement is due to a perceived weakness in SHA1.
 
-The status of RSASHA256 is set to Must Implement as major deployments (such as the root zone) use these algorithms [ROOTDPS]. It is believed that RSA/SHA-256 or RSA/SHA-512 algorithms will replace older algorithms (e.g., RSA/SHA-1) that have a perceived weakness.
+The status of RSASHA256 is set to Must Implement as major deployments (such as the root zone) use these algorithms [@RZDPS]. It is believed that RSA/SHA-256 or RSA/SHA-512 algorithms will replace older algorithms (e.g., RSA/SHA-1) that have a perceived weakness.
 
 All other algorithms used in DNSSEC specified without an implementation status are currently set to Optional.
 
@@ -109,3 +109,23 @@ This document lists, and in some cases assigns, the implementation status of cry
 Since the satus of two algorithms have changed, it is important to consider the long term effect of these changes in implementations.
 
 An implementation may have provided a default algorithm to use when generating a DNSKEY. An implementation may select a default algorithm to sign DNSSEC records. It is recommended that implementations that provide a default algorithm use an algorithm with the status "Must Implement".
+
+
+<reference anchor="RZDPS" target="https://www.iana.org/dnssec/icann-dps.txt">
+  <front>
+    <title abbrev="Root Zone KSK Operator DPS">DNSSEC Practice Statement for the Root Zone KSK Operator</title>
+    <author fullname="Fredrik Ljunggren" initials="F." surname="Ljunggren">
+      <organization>Kirei AB</organization>
+    </author>
+    <author fullname="Tomofumi Okubo" initials="T." surname="Okubo">
+      <organization>ICANN</organization>
+    </author>
+    <author fullname="Richard Lamb" initials="R." surname="Lamb">
+      <organization>ICANN</organization>
+    </author>
+    <author fullname="Jakob Schlyter" initials="J." surname="Schlyter">
+      <organization>Kirei AB</organization>
+    </author>
+    <date month="October" year="2010" />
+  </front>
+</reference>
